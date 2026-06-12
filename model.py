@@ -33,9 +33,9 @@ def compute_fc_input_dim(seq_len: int) -> int:
     return CONV3_OUT * compute_conv_output_len(seq_len)
 
 
-# ---------------------------------------------------------------------------
+
 # Positional Encoding (used by attention variant)
-# ---------------------------------------------------------------------------
+
 
 class PositionalEncoding(nn.Module):
     """Sinusoidal positional encoding for Conv3 feature positions."""
@@ -57,10 +57,8 @@ class PositionalEncoding(nn.Module):
 import math
 
 
-# ---------------------------------------------------------------------------
-# Model
-# ---------------------------------------------------------------------------
 
+# Model
 class DeepSEA(nn.Module):
     """
     Args:
@@ -192,17 +190,14 @@ class DeepSEA(nn.Module):
         return sum(p.numel() for p in self.parameters())
 
 
-# ---------------------------------------------------------------------------
-# Loss
-# ---------------------------------------------------------------------------
 
+# Loss
 def cross_entropy_loss(logits, labels):
     return F.binary_cross_entropy_with_logits(logits, labels)
 
 
-# ---------------------------------------------------------------------------
+
 # Shape trace utility
-# ---------------------------------------------------------------------------
 
 def print_model_table():
     print(f"{'Seq Len':>8}  {'Conv1':>6}  {'Pool1':>6}  {'Conv2':>6}  "
