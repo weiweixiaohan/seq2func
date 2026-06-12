@@ -1,0 +1,32 @@
+# Large data files (genomic data, checkpoints, eval results)
+*.npy
+*.pth
+*.fa
+*.fasta
+*.h5
+*.hdf5
+
+# Checkpoints and evaluation results directories
+checkpoints/
+eval_results/
+
+# Training logs
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS garbage files
+._*
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Temp files
+tmp/
+*.tmp
+*.swp
